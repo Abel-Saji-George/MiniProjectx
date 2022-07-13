@@ -1,0 +1,2 @@
+# MiniProjectx
+ Sign language translator
