@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'translationPage.dart';
+import 'package:bouncing_widget/bouncing_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -46,9 +47,13 @@ class HomeScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 180.0),
-                child: GestureDetector(
-                  onTap: () {
-                    Get.to(() => TranslateScreen());
+                child: BouncingWidget(
+                  
+                  duration: Duration(milliseconds: 300),
+                  scaleFactor: 2,
+                  onPressed: () {
+                    // Get.to(() => TranslateScreen());
+                    Get.off(TranslateScreen());
                   },
                   child: Container(
                     height: 60,
