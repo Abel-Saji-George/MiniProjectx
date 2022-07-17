@@ -112,10 +112,19 @@ class _TranslateState extends State<Translate> {
                       Padding(
                         padding: const EdgeInsets.only(left: 30.0, top: 30),
                         child: GestureDetector(
-                          child: Icon(
-                            Icons.home_outlined,
-                            color: Colors.white,
-                            size: 24,
+                          child: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xffD56969)),
+                            child: Center(
+                              child: Icon(
+                                Icons.home_rounded,
+                                color: Colors.white,
+                                size: 24,
+                              ),
+                            ),
                           ),
                           onTap: () {
                             // Get.to(() => HomeScreen());
@@ -128,14 +137,14 @@ class _TranslateState extends State<Translate> {
                   Padding(
                     padding: const EdgeInsets.only(top: 55.0, bottom: 4),
                     child: Container(
-                      height: 454,
+                      height: 500,
 
-                      width: 278,
+                      width: 300,
                       // height: MediaQuery.of(context).size.height * 0.7,
                       // width: MediaQuery.of(context).size.width,
                       // decoration: BoxDecoration(
                       // borderRadius: BorderRadius.circular(40),
-                      //! For testing
+                      //! For testing not needed irl
                       // color: Colors.green,
                       // ),
                       child: !cameraController!.value.isInitialized

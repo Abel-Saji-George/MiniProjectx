@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
 import 'package:mini_project_x/Screens/TranslationCamera.dart';
 import 'package:mini_project_x/Widgets/bottomSheet.dart';
-import 'translationPage.dart';
 import 'package:bouncing_widget/bouncing_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               const Padding(
-                padding: EdgeInsets.only(top: 130.0, bottom: 60),
+                padding: EdgeInsets.only(top: 110, bottom: 80),
                 child: Text(
                   "SIGENE",
                   style: TextStyle(
@@ -48,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                 child: SizedBox(),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 180.0),
+                padding: const EdgeInsets.only(bottom: 140.0),
                 child: BouncingWidget(
                   duration: Duration(milliseconds: 300),
                   scaleFactor: 2,

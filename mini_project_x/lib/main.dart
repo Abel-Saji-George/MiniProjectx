@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import 'Screens/homeScreen.dart';
 import 'Screens/splashScreen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 List<CameraDescription>? cameras;
 
@@ -22,13 +23,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Sigene',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ScreenUtilInit(
+      designSize: Size(360, 800),
+      builder: (context, child) => GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Sigene',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const SplashScreen(),
       ),
-      home: const SplashScreen(),
     );
   }
 }
