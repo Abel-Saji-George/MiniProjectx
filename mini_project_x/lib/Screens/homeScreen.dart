@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mini_project_x/Screens/TranslationCamera.dart';
+import 'package:mini_project_x/Widgets/bottomSheet.dart';
 import 'translationPage.dart';
 import 'package:bouncing_widget/bouncing_widget.dart';
 
@@ -48,12 +50,14 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 180.0),
                 child: BouncingWidget(
-                  
                   duration: Duration(milliseconds: 300),
                   scaleFactor: 2,
                   onPressed: () {
                     // Get.to(() => TranslateScreen());
-                    Get.off(TranslateScreen());
+                    // !commented for test purposes
+                    // Get.off(TranslateScreen());
+                    Get.off(Translate());
+                    // Get.off(BottomSheetWidgetx());
                   },
                   child: Container(
                     height: 60,
@@ -68,6 +72,7 @@ class HomeScreen extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: 'JotiOne',
                             fontSize: 24,
+                            color: Colors.white,
                             fontWeight: FontWeight.w400),
                       ),
                     ),

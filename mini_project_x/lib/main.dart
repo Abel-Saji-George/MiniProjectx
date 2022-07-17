@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/animation.dart';
@@ -7,7 +8,11 @@ import 'package:get/get.dart';
 import 'Screens/homeScreen.dart';
 import 'Screens/splashScreen.dart';
 
-void main() {
+List<CameraDescription>? cameras;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
   runApp(const MyApp());
 }
 
@@ -19,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Sigene',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -27,4 +32,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
