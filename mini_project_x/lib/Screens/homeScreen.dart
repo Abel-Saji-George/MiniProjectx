@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:mini_project_x/Screens/TranslationCamera.dart';
-import 'package:mini_project_x/Widgets/bottomSheet.dart';
 import 'package:bouncing_widget/bouncing_widget.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints.expand(),
+      constraints: const BoxConstraints.expand(),
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("materials/background.png"),
@@ -52,13 +49,13 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 140.0),
                 child: BouncingWidget(
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   scaleFactor: 2,
                   onPressed: () {
                     // Get.to(() => TranslateScreen());
                     // !commented for test purposes
                     // Get.off(TranslateScreen());
-                    Get.off(Translate());
+                    Get.off(const Translate());
                     // Get.off(BottomSheetWidgetx());
                   },
                   child: Container(

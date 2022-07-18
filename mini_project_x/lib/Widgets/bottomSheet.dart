@@ -16,22 +16,22 @@ class _BottomSheetWidgetxState extends State<BottomSheetWidgetx> {
     return DraggableScrollableSheet(
         initialChildSize: 0.08,
         minChildSize: 0.08,
-        snapSizes: [0.08, 1],
+        snapSizes: const [0.08, 1],
         snap: true,
         builder: (BuildContext context, ScrollController scrollController) {
           return ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(58)),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(58)),
             child: Container(
-              color: Color.fromARGB(255, 70, 70, 70),
+              color: const Color.fromARGB(255, 70, 70, 70),
               child: ListView.builder(
-                physics: ClampingScrollPhysics(),
+                physics: const ClampingScrollPhysics(),
                 controller: scrollController,
                 itemCount: words.length,
                 itemBuilder: (BuildContext context, int index) {
                   final name = words[index];
                   if (index == 0) {
-                    return Column(children: [
-                      Container(
+                    return Column(children: const [
+                      SizedBox(
                         width: 50,
                         child: Divider(
                           thickness: 2,
@@ -51,11 +51,11 @@ class _BottomSheetWidgetxState extends State<BottomSheetWidgetx> {
                     elevation: 0,
                     margin: EdgeInsets.zero,
                     child: ListTile(
-                      tileColor: Color.fromARGB(255, 70, 70, 70),
+                      tileColor: const Color.fromARGB(255, 70, 70, 70),
                       selected: selectedWordId == name['id'],
-                      selectedTileColor: Color.fromARGB(255, 129, 126, 126),
+                      selectedTileColor: const Color.fromARGB(255, 129, 126, 126),
                       selectedColor: Colors.white,
-                      contentPadding: EdgeInsets.all(10),
+                      contentPadding: const EdgeInsets.all(10),
                       onTap: () {
                         setState(() {
                           selectedWordId = name['id'];

@@ -115,10 +115,10 @@ class _TranslateState extends State<Translate> {
                           child: Container(
                             width: 50,
                             height: 50,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Color(0xffD56969)),
-                            child: Center(
+                            child: const Center(
                               child: Icon(
                                 Icons.home_rounded,
                                 color: Colors.white,
@@ -128,7 +128,7 @@ class _TranslateState extends State<Translate> {
                           ),
                           onTap: () {
                             // Get.to(() => HomeScreen());
-                            Get.off(HomeScreen());
+                            Get.off(const HomeScreen());
                           },
                         ),
                       ),
@@ -136,7 +136,7 @@ class _TranslateState extends State<Translate> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 55.0, bottom: 4),
-                    child: Container(
+                    child: SizedBox(
                       height: 500,
 
                       width: 300,
@@ -150,7 +150,7 @@ class _TranslateState extends State<Translate> {
                       child: !cameraController!.value.isInitialized
                           ? Container()
                           : ClipRRect(
-                              borderRadius: BorderRadius.vertical(
+                              borderRadius: const BorderRadius.vertical(
                                   top: Radius.circular(40),
                                   bottom: Radius.circular(40)),
                               child: AspectRatio(
@@ -165,7 +165,7 @@ class _TranslateState extends State<Translate> {
                   ),
                   Text(
                     output,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontFamily: 'JotiOne',
                       fontSize: 64,
                       color: Colors.white,
@@ -176,7 +176,7 @@ class _TranslateState extends State<Translate> {
             ),
           ),
         ),
-        BottomSheetWidgetx()
+        const BottomSheetWidgetx()
       ],
     );
   }
