@@ -22,7 +22,6 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Color.fromARGB(31, 21, 1, 1),
       splashTransition: SplashTransition.scaleTransition,
       pageTransitionType: PageTransitionType.leftToRightWithFade,
-      
     );
   }
 }

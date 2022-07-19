@@ -5,7 +5,9 @@ import 'package:mini_project_x/Widgets/bottomSheet.dart';
 import 'package:mini_project_x/main.dart';
 import 'package:get/get.dart';
 // !the package for tensorflow
-// import 'package:tflite/tflite.dart';
+import 'package:tflite/tflite.dart';
+// import 'package:tflite_maven/tflite.dart';
+// import 'package:tensorflow_native/tensorflowlite.dart';
 
 List words = [
   {'id': 0, 'word': ''},
@@ -37,12 +39,12 @@ class _TranslateState extends State<Translate> {
   CameraImage? cameraImage;
   CameraController? cameraController;
   // !dont forget to initialize as empty string later on
-  String output = 'Hello';
+  String output = '';
   @override
   void initState() {
     super.initState();
-    loadCamera();
     loadModel();
+    loadCamera();
   }
 
   loadCamera() {
@@ -63,30 +65,30 @@ class _TranslateState extends State<Translate> {
 
 // ! The codes that contains the functions for loading the model,running the model,present as comments here since the TFlite is deprecated i'd have to look into it later on
   runModel() async {
-    //   if (cameraImage != null) {
-    //     var predictions = await Tflite.runModelOnFrame(
-    //         bytesList: cameraImage!.planes.map((plane) {
-    //           return plane.bytes;
-    //         }).toList(),
-    //         imageHeight: cameraImage!.height,
-    //         imageWidth: cameraImage!.width,
-    //         imageMean: 127.5,
-    //         imageStd: 127.5,
-    //         rotation: 90,
-    //         numResults: 2,
-    //         threshold: 0.1,
-    //         asynch: true);
-    //     predictions!.forEach((element) {
-    //       setState(() {
-    //         output = element['label'];
-    //       });
-    //     });
-    // }
+    if (cameraImage != null) {  
+      var predictions = await Tflite.runModelOnFrame(
+          bytesList: cameraImage!.planes.map((plane) {
+            return plane.bytes;
+          }).toList(),
+          imageHeight: cameraImage!.height,
+          imageWidth: cameraImage!.width,
+          imageMean: 127.5,
+          imageStd: 127.5,
+          rotation: 90,
+          numResults: 2,
+          threshold: 0.1,
+          asynch: true);
+      predictions!.forEach((element) {
+        setState(() {
+          output = element['label'];
+        });
+      });
+    }
   }
+
   loadModel() async {
-    // await TFlite.loadModel(
-    //   model:"materials/model.tflite",labels:"assets/labels.txt"
-    // );
+    await Tflite.loadModel(
+        model: "materials/model.tflite", labels: "materials/labels.txt");
   }
 
   @override
